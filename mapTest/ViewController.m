@@ -8,11 +8,11 @@
 
 #import "ViewController.h"
 #import "SSAnnotation.h"
-#import "CollectionView.h"
+#import "CollectionWrapView.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic) CollectionView *collectionView;
+@property (nonatomic) CollectionWrapView *collectionWrapView;
 
 @end
 
@@ -59,8 +59,8 @@
     [self.mapView addAnnotation:annotation];
     [self.view addSubview:_mapView];
     
-    _collectionView = [[CollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-    [self.view addSubview:_collectionView];
+    _collectionWrapView = [[CollectionWrapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+    [self.view addSubview:_collectionWrapView];
 }
 
 // 返回标注视图（大头针视图）
