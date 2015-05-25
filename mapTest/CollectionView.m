@@ -25,16 +25,18 @@
         vFlowLayout = [[UICollectionViewFlowLayout alloc] init];
         vFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         vFlowLayout.itemSize = CGSizeMake(frame.size.width, 300);
-        vFlowLayout.minimumInteritemSpacing = 10.0f;
-        vFlowLayout.minimumLineSpacing = 10.0f;
+        vFlowLayout.minimumInteritemSpacing = 0;
+        vFlowLayout.minimumLineSpacing = 0;
         vFlowLayout.headerReferenceSize = CGSizeMake(0.0f, 30.0f);
         vFlowLayout.footerReferenceSize = CGSizeMake(0.0f, 30.0f);
-        vFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        vFlowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         
         
         _collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:vFlowLayout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        [_collectionView setPagingEnabled:YES];
+        [_collectionView setShowsHorizontalScrollIndicator:NO];
         [_collectionView setBackgroundColor:[UIColor clearColor]];
         
         [self.collectionView setCollectionViewLayout:vFlowLayout animated:YES];
